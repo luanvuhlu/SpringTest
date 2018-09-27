@@ -9,7 +9,7 @@ mvn test
 ## Test cases list
 ### com.luanvv.springtest.services.AccountServiceTest
 #### testSaveMultiNoRollback
-A service maybe throw an exception. However, we will catch these exception to know did transaction is rollbacked.  
+A service maybe throw an exception. However, we will catch these exception to know Is transaction rollbacked.  
 Service method like this
 ```
 public List<Account> saveMulti(List<Account> accounts) {
@@ -30,7 +30,7 @@ public List<Account> saveMulti(List<Account> accounts) {
 	}
  ```
 #### testSaveMultiHasRollback
-A liitle difference, it throw an exception too, but we do not catch.
+A little difference, it throw an exception too, but we do not catch.
 ```
 @Override
 	public List<Account> saveMultiThrow(List<Account> accounts) throws Exception {
