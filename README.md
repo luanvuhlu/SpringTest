@@ -71,6 +71,8 @@ but you cannot handle it
 		assertTrue(false);
 	}
 ```
+## How it works
+You should run it without any failures
 ## Authors
 
 * **Luan Vu** - [luanvuhlu](https://github.com/luanvuhlu)
