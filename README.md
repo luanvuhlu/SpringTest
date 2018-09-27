@@ -1,5 +1,5 @@
 # SpringTest
-Sometims, I face some seriously trouble with Spring. So I want to write down some test to know exactly how spring code run
+Sometimes, I face some seriously trouble with Spring. So I want to write down some tests to know exactly how spring code run
 
 ## How to run
 Use maven to run
