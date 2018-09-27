@@ -4,6 +4,8 @@ Sometims, I face some seriously trouble with Spring. So I want to write down som
 ## How to run
 Use maven to run
 ```
+git clone https://github.com/luanvuhlu/SpringTest.git
+cd SpringTest
 mvn test
 ```
 ## Test cases list
