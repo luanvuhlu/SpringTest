@@ -39,4 +39,14 @@ public class AccountFacadeServiceImpl implements AccountFacadeService {
 		return service.findAll();
 	}
 
+	@Override
+	public void save(Account account) {
+		service.save(account);
+	}
+
+	@Override
+	public void deleteAll() {
+		service.deleteAll();
+	}
+
 }

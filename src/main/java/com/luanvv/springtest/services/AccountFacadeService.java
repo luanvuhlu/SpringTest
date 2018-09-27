@@ -18,4 +18,10 @@ public interface AccountFacadeService {
 	List<Account> saveMulti(List<Account> accounts);
 	
 	List<Account> findAll();
+
+	@Transactional
+	void save(Account account);
+
+	@Transactional
+	void deleteAll();
 }

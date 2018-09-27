@@ -5,6 +5,7 @@ import static org.junit.Assert.assertTrue;
 
 import java.util.Arrays;
 
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -23,12 +24,12 @@ public class AccountFacadeServiceTest {
 
 	@Before
 	public void init() {
-
+		service.save(new Account("luan", "vu"));
 	}
 
 	@Test
 	public void testSaveMulti() {
-		assertEquals(3, service.findAll().size());
+		assertEquals(1, service.findAll().size());
 		try {
 			service.saveMulti(Arrays.asList(new Account("luan 3", "vu 3"), new Account("luan 4", "vu 4"),
 					new Account("luan 5", "vu 5")));
@@ -37,6 +38,11 @@ public class AccountFacadeServiceTest {
 			e.printStackTrace();
 			assertTrue(true);
 		}
-		assertEquals(3, service.findAll().size()); // Add no one. Roll back perfectly
+		assertEquals(1, service.findAll().size()); // Add no one. Roll back perfectly
+	}
+	
+	@After
+	public void tearDown() {
+		service.deleteAll();
 	}
 }
