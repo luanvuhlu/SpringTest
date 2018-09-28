@@ -32,7 +32,15 @@ public class AccountServiceImpl implements AccountService {
 	@Override
 	public List<Account> saveMulti(List<Account> accounts) {
 		try {
-			return saveAccounts(accounts);
+			List<Account> newAccounts = new ArrayList<>();
+			for (int i = 0; i < accounts.size(); i++) {
+				if(i == 0) {
+					newAccounts.add(dao.save(accounts.get(i)));
+					continue;
+				}
+				throw new RuntimeException();
+			}
+			return newAccounts;
 		}catch (Exception e) {
 			log.error("", e);
 			return Collections.emptyList();
@@ -41,10 +49,6 @@ public class AccountServiceImpl implements AccountService {
 	
 	@Override
 	public List<Account> saveMultiThrow(List<Account> accounts) throws Exception {
-		return saveAccounts(accounts);
-	}
-
-	private List<Account> saveAccounts(List<Account> accounts) throws Exception {
 		List<Account> newAccounts = new ArrayList<>();
 		for (int i = 0; i < accounts.size(); i++) {
 			if(i == 0) {
